@@ -1,0 +1,45 @@
+
+HEART FAILURE 30-DAY READMISSION PREDICTION
+============================================
+
+Dataset shape:
+(12000, 36)
+
+Target:
+Readmitted_30_Days
+
+Target distribution:
+{0: 8400, 1: 3600}
+
+Models:
+- Logistic Regression
+- KNN
+- Decision Tree
+
+Selected final model:
+Logistic Regression
+
+Selection metric:
+Test ROC-AUC
+
+Required metrics:
+Accuracy, Precision, Recall, F1-score, ROC-AUC
+
+Class imbalance strategy:
+class_weight='balanced' for Logistic Regression
+
+KNN k selected by 5-fold CV:
+15
+
+Logistic Regression C selected by 5-fold CV:
+1.0
+
+Final model test results:
+Accuracy  = 0.8950
+Precision = 0.8524
+Recall    = 0.7861
+F1        = 0.8179
+ROC-AUC   = 0.9562
+
+Fit diagnosis:
+Reasonable generalization

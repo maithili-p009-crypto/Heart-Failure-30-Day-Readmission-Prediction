@@ -1,0 +1,21 @@
+HEART FAILURE READMISSION DATA QUALITY REPORT
+============================================================
+
+Original shape: (12000, 36)
+Target: Readmitted_30_Days
+Target values: [0, 1]
+Duplicate rows after cleaning: 0
+Total missing values: 0
+Excluded columns: ['Patient_ID']
+
+Target distribution:
+Readmitted_30_Days
+0    8400
+1    3600
+Name: count, dtype: int64
+
+Target percentage:
+Readmitted_30_Days
+0    70.0
+1    30.0
+Name: proportion, dtype: float64
