@@ -846,7 +846,81 @@ print(
 
 
 # ============================================================
-# 18. CLASS-IMBALANCE EXTENSION
+# 18. DECISION TREE HYPERPARAMETER EXPERIMENT
+# ============================================================
+#
+# max_depth is selected using 5-fold stratified cross-validation
+# on TRAINING DATA ONLY.
+#
+# This avoids repeatedly tuning on the final test set.
+# ============================================================
+
+dt_depth_values = [None, 3, 5, 7, 10, 15, 20]
+
+decision_tree_experiment = []
+
+for depth in dt_depth_values:
+
+    dt_pipeline = Pipeline(
+        steps=[
+            ("preprocessor", preprocessor),
+            (
+                "model",
+                DecisionTreeClassifier(
+                    max_depth=depth,
+                    random_state=RANDOM_STATE
+                )
+            )
+        ]
+    )
+
+    cv_scores = cross_val_score(
+        dt_pipeline,
+        X_train,
+        y_train,
+        cv=cv,
+        scoring="roc_auc",
+        n_jobs=-1
+    )
+
+    decision_tree_experiment.append({
+        "max_depth": depth,
+        "Mean_CV_ROC_AUC": cv_scores.mean(),
+        "Std_CV_ROC_AUC": cv_scores.std()
+    })
+
+decision_tree_experiment_df = pd.DataFrame(
+    decision_tree_experiment
+)
+
+decision_tree_experiment_df.to_csv(
+    os.path.join(
+        OUTPUT_DIR,
+        "decision_tree_depth_experiment.csv"
+    ),
+    index=False
+)
+
+best_dt_depth = decision_tree_experiment_df.loc[
+    decision_tree_experiment_df["Mean_CV_ROC_AUC"].idxmax(),
+    "max_depth"
+]
+
+print("\nDecision Tree hyperparameter experiment:")
+print(
+    decision_tree_experiment_df.to_string(index=False)
+)
+
+print(
+    f"\nSelected Decision Tree max_depth from 5-fold CV: "
+    f"{best_dt_depth}"
+)
+
+
+# ============================================================
+# 19. CLASS-IMBALANCE EXTENSION
+# ============================================================
+
 # ============================================================
 #
 # Strategy:
@@ -944,7 +1018,7 @@ print(
 
 
 # ============================================================
-# 19. FINAL MODEL
+# 20. FINAL MODEL
 # ============================================================
 #
 # Select the model with the highest TEST ROC-AUC for reporting.
@@ -996,7 +1070,7 @@ print(
 
 
 # ============================================================
-# 20. SAVE FINAL MODEL
+# 21. SAVE FINAL MODEL
 # ============================================================
 
 joblib.dump(
@@ -1009,7 +1083,7 @@ joblib.dump(
 
 
 # ============================================================
-# 21. SAVE FINAL SUMMARY
+# 22. SAVE FINAL SUMMARY
 # ============================================================
 
 summary = f"""
@@ -1048,6 +1122,9 @@ KNN k selected by 5-fold CV:
 Logistic Regression C selected by 5-fold CV:
 {best_C}
 
+Decision Tree max_depth selected by 5-fold CV:
+{best_dt_depth}
+
 Final model test results:
 Accuracy  = {selected_row['Test_Accuracy']:.4f}
 Precision = {selected_row['Test_Precision']:.4f}
@@ -1071,7 +1148,7 @@ with open(
 
 
 # ============================================================
-# 22. FINISHED
+# 23. FINISHED
 # ============================================================
 
 print("\n" + "=" * 70)
