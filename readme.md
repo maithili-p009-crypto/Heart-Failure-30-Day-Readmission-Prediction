@@ -1,4 +1,4 @@
-# 🏥 30-Day Hospital Readmission Prediction
+<img width="1118" height="918" alt="Screenshot 2026-09-29 at 23 32 20" src="https://github.com/user-attachments/assets/635979d1-ec69-40f9-a825-5896cde42f16" /># 🏥 30-Day Hospital Readmission Prediction
 
 A machine learning project that predicts whether a patient will be readmitted to the hospital within 30 days.
 
@@ -77,3 +77,18 @@ Heart-Failure-30-Day-Readmission-Prediction/
     ├── roc_curves_all_models.png
     ├── target_distribution.png
     └── train_vs_test_accuracy.png
+
+## 📊 Visualizations
+
+### Model Metric Comparison
+<img width="1118" height="918" alt="Screenshot 2026-09-29 at 23 32 37" src="https://github.com/user-attachments/assets/2c9709ea-5b5e-4073-b4ab-f5383caa04b0" />
+
+### ROC Curves
+<img width="1495" height="918" alt="Screenshot 2026-09-29 at 23 31 48" src="https://github.com/user-attachments/assets/1dc58c55-2c3c-4978-9b25-f0478094284f" />
+
+### Target Distribution
+!<img width="1168" height="918" alt="Screenshot 2026-09-29 at 23 33 50" src="https://github.com/user-attachments/assets/97a05af4-7c0d-440f-8837-b1daf35d8192" />
+
+### Training vs Testing Accuracy
+
+<img width="1470" height="918" alt="Screenshot 2026-09-29 at 23 34 26" src="https://github.com/user-attachments/assets/4fc1e961-af67-45c3-9f3d-f52077b3d84c" />
