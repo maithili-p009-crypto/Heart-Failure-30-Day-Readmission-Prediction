@@ -40,12 +40,13 @@ Experiments include KNN `K` values, Logistic Regression `C` values, and class im
 
 ## 📈 Results
 
-| Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
-|---|---:|---:|---:|---:|---:|
-| Logistic Regression | 89.50% | 85.24% | 78.61% | 81.79% | 95.62% |
-| KNN | 84.17% | 82.32% | 60.14% | 69.50% | 88.78% |
-| Decision Tree | 78.83% | 64.17% | 66.67% | 65.40% | 75.36% |
+## Model Performance Comparison
 
+| Model | Train Accuracy | Test Accuracy | Test Precision | Test Recall | Test F1 | Test ROC-AUC |
+|---|---:|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.8946 | 0.8950 | 0.8952 | 0.8950 | 0.8948 | 0.9506 |
+| KNN | 0.8924 | 0.8417 | 0.8422 | 0.8417 | 0.8415 | 0.8977 |
+| Decision Tree | 1.0000 | 0.7883 | 0.7900 | 0.7883 | 0.7877 | 0.8365 |
 ### Evaluation Metrics
 
 Accuracy, Precision, Recall, F1-Score, ROC-AUC and Confusion Matrix were used to evaluate model performance.
