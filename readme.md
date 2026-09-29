@@ -60,11 +60,20 @@ Heart-Failure-30-Day-Readmission-Prediction/
 ├── .gitignore
 ├── dataset_12000_records.csv
 ├── hospital_readmission_submission.py
+│
 └── outputs/
-    ├── model_comparison.csv
+    ├── confusion_matrix_decision_tree.png
+    ├── confusion_matrix_knn.png
+    ├── confusion_matrix_logistic_regression.png
+    ├── data_quality_report.txt
+    ├── decision_tree_depth_experiment.csv
+    ├── final_summary.txt
+    ├── hospital_readmission_model.pkl
+    ├── imbalance_comparison.csv
     ├── knn_k_experiment.csv
     ├── logistic_C_experiment.csv
-    ├── imbalance_comparison.csv
     ├── metric_comparison.png
+    ├── model_comparison.csv
     ├── roc_curves_all_models.png
-    └── hospital_readmission_model.pkl
+    ├── target_distribution.png
+    └── train_vs_test_accuracy.png
