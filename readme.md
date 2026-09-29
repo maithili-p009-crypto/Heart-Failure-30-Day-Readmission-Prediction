@@ -80,15 +80,30 @@ Heart-Failure-30-Day-Readmission-Prediction/
 
 ## 📊 Visualizations
 
-### Model Metric Comparison
-<img width="1118" height="918" alt="Screenshot 2026-09-29 at 23 32 37" src="https://github.com/user-attachments/assets/2c9709ea-5b5e-4073-b4ab-f5383caa04b0" />
+### 1. Model Metric Comparison
 
-### ROC Curves
-<img width="1495" height="918" alt="Screenshot 2026-09-29 at 23 31 48" src="https://github.com/user-attachments/assets/1dc58c55-2c3c-4978-9b25-f0478094284f" />
+![Model Metric Comparison](outputs/metric_comparison.png)
 
-### Target Distribution
-!<img width="1168" height="918" alt="Screenshot 2026-09-29 at 23 33 50" src="https://github.com/user-attachments/assets/97a05af4-7c0d-440f-8837-b1daf35d8192" />
+### 2. ROC Curves
 
-### Training vs Testing Accuracy
+![ROC Curves](outputs/roc_curves_all_models.png)
 
-<img width="1470" height="918" alt="Screenshot 2026-09-29 at 23 34 26" src="https://github.com/user-attachments/assets/4fc1e961-af67-45c3-9f3d-f52077b3d84c" />
+### 3. Target Distribution
+
+![Target Distribution](outputs/target_distribution.png)
+
+### 4. Training vs Testing Accuracy
+
+![Train vs Test Accuracy](outputs/train_vs_test_accuracy.png)
+
+### 5. Logistic Regression Confusion Matrix
+
+![Logistic Regression Confusion Matrix](outputs/confusion_matrix_logistic_regression.png)
+
+### 6. KNN Confusion Matrix
+
+![KNN Confusion Matrix](outputs/confusion_matrix_knn.png)
+
+### 7. Decision Tree Confusion Matrix
+
+![Decision Tree Confusion Matrix](outputs/confusion_matrix_decision_tree.png)
