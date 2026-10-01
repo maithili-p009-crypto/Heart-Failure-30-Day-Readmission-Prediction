@@ -206,4 +206,4 @@ The project generates:
 
 ## 👩‍💻 Author
 
-**Maithili**
+**Maithili Patil**
